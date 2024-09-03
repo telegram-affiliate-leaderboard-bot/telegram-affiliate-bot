@@ -3,11 +3,11 @@ import requests
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
-# Load the bot token from environment variables for security
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+# Directly use the provided bot token
+TOKEN = '7276267864:AAFFpamtVlpoIgQSD7m-m0oYNoJAyKjDNTE'
 
-# URL for fetching leaderboard data
-LEADERBOARD_URL = 'https://scooby-g3casino.cloudfunctions.net/user/affiliate/referral-leaderboard'
+# Updated URL for fetching leaderboard data
+LEADERBOARD_URL = 'https://europe-west2-g3casino.cloudfunctions.net/user/affiliate/referral-leaderboard'
 
 # Function to fetch data from the API
 def fetch_data():
@@ -80,7 +80,7 @@ def monthly(update: Update, context: CallbackContext):
 
 def main():
     if not TOKEN:
-        print("Error: Bot token not found. Set the TELEGRAM_BOT_TOKEN environment variable.")
+        print("Error: Bot token not found.")
         return
 
     # Set up the Updater and Dispatcher
@@ -99,3 +99,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
